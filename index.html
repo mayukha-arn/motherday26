@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Mother's Day 💕</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rose:    #e8829a;
+      --blush:   #f7dde5;
+      --cream:   #fdf8f4;
+      --charcoal:#2c2320;
+      --muted:   #8a7068;
+      --soft:    #f0e6ea;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    .hearts-bg {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    .hearts-bg span {
+      position: absolute; bottom: -40px; font-size: 1.4rem; opacity: 0;
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10%  { opacity: 0.35; }
+      90%  { opacity: 0.15; }
+      100% { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+    }
+
+    .hero {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 60px 24px 80px;
+      text-align: center;
+    }
+
+    .hero-tag {
+      font-weight: 300; font-size: 0.78rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--rose); margin-bottom: 20px;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      line-height: 1.1; color: var(--charcoal);
+      margin-bottom: 18px;
+      opacity: 0; animation: fadeUp 0.9s 0.4s forwards;
+    }
+    .hero h1 em { font-style: italic; color: var(--rose); }
+
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 300;
+      color: var(--muted); max-width: 420px;
+      line-height: 1.7; margin-bottom: 52px;
+      opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
+    }
+
+    .photo-wrap {
+      position: relative;
+      opacity: 0; animation: fadeUp 1s 0.8s forwards;
+    }
+    .photo-frame {
+      width: clamp(260px, 55vw, 420px);
+      aspect-ratio: 3/4;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(44,35,32,0.18), 0 4px 12px rgba(44,35,32,0.08);
+      position: relative;
+      background: var(--soft);
+    }
+    .photo-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .photo-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(44,35,32,0.55));
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 1rem;
+      padding: 32px 20px 16px;
+      border-radius: 0 0 24px 24px;
+    }
+
+    .photo-wrap::before {
+      content: '🌸';
+      position: absolute; top: -18px; right: -18px;
+      font-size: 2.2rem;
+      animation: spinSlow 8s linear infinite;
+    }
+    .photo-wrap::after {
+      content: '🌷';
+      position: absolute; bottom: -14px; left: -16px;
+      font-size: 1.8rem;
+      animation: spinSlow 10s linear infinite reverse;
+    }
+    @keyframes spinSlow {
+      0%   { transform: rotate(0deg) scale(1); }
+      50%  { transform: rotate(180deg) scale(1.15); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    .scroll-cue {
+      margin-top: 52px;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: var(--muted); font-size: 0.78rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0; animation: fadeUp 1s 1.4s forwards;
+    }
+    .scroll-cue .arrow {
+      width: 1px; height: 40px;
+      background: var(--rose);
+      animation: arrowPulse 1.6s ease-in-out infinite;
+    }
+    @keyframes arrowPulse {
+      0%,100% { transform: scaleY(1); opacity: 1; }
+      50%     { transform: scaleY(0.5); opacity: 0.4; }
+    }
+
+    .divider {
+      position: relative; z-index: 1;
+      text-align: center; padding: 0 24px;
+      margin: 0 auto 64px;
+    }
+    .divider-line {
+      display: flex; align-items: center; gap: 16px;
+      max-width: 500px; margin: 0 auto;
+      color: var(--rose);
+    }
+    .divider-line::before,
+    .divider-line::after {
+      content: ''; flex: 1;
+      height: 1px; background: var(--rose); opacity: 0.3;
+    }
+    .divider h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-top: 32px; margin-bottom: 10px;
+      color: var(--charcoal);
+    }
+    .divider p {
+      font-size: 0.95rem; color: var(--muted);
+      font-weight: 300; max-width: 400px; margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .steps-section {
+      position: relative; z-index: 1;
+      max-width: 720px; margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 0 24px;
+      margin-bottom: 48px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .step.visible { opacity: 1; transform: translateY(0); }
+
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--rose);
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(232,130,154,0.35);
+      position: relative;
+    }
+    .step:not(:last-child) .step-num::after {
+      content: '';
+      position: absolute; top: 56px; left: 50%;
+      transform: translateX(-50%);
+      width: 1px; height: 64px;
+      background: var(--rose); opacity: 0.2;
+    }
+
+    .step-body { padding-top: 12px; }
+    .step-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.18rem; margin-bottom: 8px;
+      color: var(--charcoal);
+    }
+    .step-body p {
+      font-size: 0.93rem; color: var(--muted);
+      line-height: 1.75; margin-bottom: 12px;
+    }
+
+    code {
+      display: inline-block;
+      background: var(--soft);
+      border: 1px solid rgba(232,130,154,0.3);
+      color: var(--rose);
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      padding: 2px 8px; border-radius: 6px;
+    }
+
+    .step-card {
+      background: white;
+      border: 1px solid rgba(232,130,154,0.18);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--charcoal);
+      box-shadow: 0 4px 16px rgba(44,35,32,0.06);
+    }
+    .step-card ul { list-style: none; padding: 0; }
+    .step-card ul li {
+      padding: 5px 0;
+      border-bottom: 1px solid var(--blush);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .step-card ul li:last-child { border-bottom: none; }
+    .step-card ul li::before { content: '📄'; font-size: 0.9rem; }
+
+    .step-card.chrome { display: flex; align-items: flex-start; gap: 14px; }
+    .chrome-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+
+    .tip {
+      background: var(--blush);
+      border-left: 3px solid var(--rose);
+      border-radius: 0 10px 10px 0;
+      padding: 10px 16px;
+      font-size: 0.85rem; color: var(--muted);
+      margin-top: 12px; line-height: 1.65;
+    }
+
+    .download-links {
+      display: flex; flex-direction: column; gap: 10px;
+      margin-top: 14px;
+    }
+    .dl-link {
+      display: flex; align-items: center; gap: 12px;
+      background: white;
+      border: 1px solid rgba(232,130,154,0.25);
+      border-radius: 10px;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: var(--charcoal);
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(44,35,32,0.05);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .dl-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(232,130,154,0.2);
+    }
+    .dl-link .dl-icon { font-size: 1.1rem; }
+    .dl-link .dl-name { font-family: 'Courier New', monospace; font-size: 0.85rem; color: var(--rose); }
+    .dl-link .dl-arrow { margin-left: auto; color: var(--rose); font-size: 0.85rem; }
+
+    footer {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 32px 24px 48px;
+      border-top: 1px solid var(--blush);
+    }
+    footer p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem; color: var(--muted);
+    }
+    footer .heart { color: var(--rose); font-style: normal; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .step { grid-template-columns: 44px 1fr; gap: 0 16px; }
+      .step-num { width: 44px; height: 44px; font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hearts-bg" id="heartsBg"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-tag">A little something made with love</p>
+  <h1>Happy <em>Mother's</em><br>Day</h1>
+  <p class="hero-sub">For the woman who held my hand through everything — here's a tiny piece of that, living on every webpage.</p>
+
+  <div class="photo-wrap">
+    <div class="photo-frame">
+      <img src="photo.jpg" alt="Us">
+      <div class="photo-caption">then &amp; always 💕</div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>get the extension</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider">
+  <div class="divider-line">🌸</div>
+  <h2>Add it to your browser</h2>
+  <p>A kawaii version of us that waves from the corner of every page you visit. Takes about 2 minutes to set up.</p>
+</div>
+
+<!-- STEPS -->
+<section class="steps-section">
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h3>Download the three extension files</h3>
+      <p>Right-click each file below and choose <strong>Save link as</strong>. Save all three into a new folder on your Desktop called <code>motherday26</code>.</p>
+      <div class="download-links">
+        <a class="dl-link" href="manifest.json" download>
+          <span class="dl-icon">📄</span>
+          <span class="dl-name">manifest.json</span>
+          <span class="dl-arrow">↓ save</span>
+        </a>
+        <a class="dl-link" href="content.js" download>
+          <span class="dl-icon">📄</span>
+          <span class="dl-name">content.js</span>
+          <span class="dl-arrow">↓ save</span>
+        </a>
+        <a class="dl-link" href="content.css" download>
+          <span class="dl-icon">📄</span>
+          <span class="dl-name">content.css</span>
+          <span class="dl-arrow">↓ save</span>
+        </a>
+      </div>
+      <div class="tip">Make sure all three files end up in the same folder and keep their exact names.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h3>Check your folder</h3>
+      <p>Your <code>motherday26</code> folder should contain exactly these three files:</p>
+      <div class="step-card">
+        <ul>
+          <li>manifest.json</li>
+          <li>content.js</li>
+          <li>content.css</li>
+        </ul>
+      </div>
+      <div class="tip">Do not move files out of the folder — Chrome needs all three in the same place.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h3>Open Chrome's extension settings</h3>
+      <p>In Chrome, type this into the address bar and press Enter:</p>
+      <div class="step-card chrome">
+        <span class="chrome-icon">🔗</span>
+        <div>
+          <code>chrome://extensions</code>
+          <p style="margin-top:8px;margin-bottom:0;">This opens the Extensions page where you manage everything installed in your browser.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h3>Turn on Developer Mode</h3>
+      <p>In the top-right corner of the Extensions page, you will see a toggle labeled <strong>Developer mode</strong>. Flip it on. A few new buttons will appear at the top left.</p>
+      <div class="tip">This is safe — it just lets you load extensions from your own computer instead of the Chrome Web Store.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <h3>Load the folder</h3>
+      <p>Click the <strong>Load unpacked</strong> button that appeared. A file picker will open. Navigate to and select the <code>motherday26</code> folder itself — not a file inside it, the whole folder. Click Select.</p>
+      <div class="step-card">
+        <ul>
+          <li style="border:none;padding-bottom:0;">You should now see "Little Buddy" appear as an installed extension.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <h3>Open any website</h3>
+      <p>Go to any page — Google, Wikipedia, a news site. Look at the <strong>top-right corner</strong> of the page. You should see us bobbing and sending hearts. 💕</p>
+      <div class="tip">It will not appear on Chrome's own pages like the new tab page — that is normal. Try any real website.</div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-bottom:0">
+    <div class="step-num">✦</div>
+    <div class="step-body">
+      <h3>Something not working?</h3>
+      <p>Go back to <code>chrome://extensions</code>, find Little Buddy, and click the refresh icon (↺). Then close and reopen the tab you want to see it on. Existing tabs need to be refreshed after installing.</p>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>made with <span class="heart">♥</span> for the best mom</p>
+</footer>
+
+<script>
+  const hb = document.getElementById('heartsBg');
+  const symbols = ['❤️','💕','🌸','✨','💖','🌷','💗'];
+  for (let i = 0; i < 18; i++) {
+    const s = document.createElement('span');
+    s.textContent = symbols[i % symbols.length];
+    s.style.cssText = `
+      left: ${Math.random() * 100}%;
+      animation-duration: ${6 + Math.random() * 10}s;
+      animation-delay: ${Math.random() * 8}s;
+      font-size: ${0.9 + Math.random() * 1.1}rem;
+    `;
+    hb.appendChild(s);
+  }
+
+  const steps = document.querySelectorAll('.step');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  steps.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
