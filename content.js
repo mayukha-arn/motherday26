@@ -1,4 +1,3 @@
-// Prevent duplicate injection (e.g. on navigation)
 if (!document.getElementById('little-buddy')) {
   const buddy = document.createElement('div');
   buddy.id = 'little-buddy';
@@ -16,7 +15,6 @@ if (!document.getElementById('little-buddy')) {
   `;
   document.body.appendChild(buddy);
 
-  // Cycle through emotes every few seconds
   const emotes = ['❤️', '👋', '✨', '💕', '🌟', '😊'];
   let i = 0;
 

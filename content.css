@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 2147483647; /* max z-index, renders above everything */
+  z-index: 2147483647;
   width: 56px;
   pointer-events: none;
   font-family: sans-serif;
@@ -80,7 +80,6 @@
   animation: emote-rise 2.5s ease-out forwards;
 }
 
-/* Animations */
 @keyframes buddy-bob {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-5px); }
