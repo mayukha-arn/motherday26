@@ -3,7 +3,7 @@ if (!document.getElementById('little-buddy')) {
   buddy.id = 'little-buddy';
   buddy.innerHTML = `
     <div id="buddy-svg-wrap">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 300" width="120" height="107">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 80 380 220" width="140" height="91" style="overflow:visible">
         <style>
           @keyframes kb { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
           @keyframes kw { 0%,100%{transform:rotate(-8deg)} 50%{transform:rotate(26deg)} }
