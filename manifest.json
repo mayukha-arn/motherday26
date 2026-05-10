@@ -3,6 +3,7 @@
   "name": "Little Buddy",
   "version": "1.0",
   "description": "A tiny friend who lives on your screen",
+  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
