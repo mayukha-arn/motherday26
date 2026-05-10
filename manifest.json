@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Little Buddy",
+  "version": "1.0",
+  "description": "A tiny friend who lives on your screen",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
