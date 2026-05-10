@@ -1,6 +1,6 @@
 # motherday26 💕
 
-A Mother's Day gift built as a Chrome extension — a tiny illustration of my mom and I based on a picture taken when I was younger. It sits in the top-right corner of every webpage, bobbing and sending hearts even when I cannot.
+A Mother's Day gift built as a Chrome extension featuring a tiny illustration of my mom and I based on a picture taken when I was younger. It sits in the top-right corner of every webpage, bobbing and sending hearts even when I cannot.
 
 ---
 
@@ -22,7 +22,7 @@ motherday26/
 The character is a hand-drawn SVG injected directly into every webpage via a content script. It requires no external libraries, no images, and no background service worker — just the three files above.
 
 **What it does:**
-- Renders a kawaii two-person illustration (mom and daughter holding hands) in the top-right corner of every page
+- Renders a cute two-person illustration (mom and daughter holding hands) in the top-right corner of every page
 - Both figures bob up and down independently on a loop
 - The girl's left arm waves continuously
 - Floating emojis (❤️ 💕 ✨ 🌟) pop up every few seconds
